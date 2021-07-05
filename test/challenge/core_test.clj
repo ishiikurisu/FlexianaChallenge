@@ -1,6 +1,6 @@
 (ns challenge.core-test
   (:require [clojure.test :refer :all]
-            [challenge.core :refer :all]))
+            [challenge.lib :refer :all]))
 
 ; unit tests
 (deftest verify-testing-regular-cases
