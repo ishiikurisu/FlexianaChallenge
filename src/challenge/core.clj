@@ -1,15 +1,15 @@
 (ns challenge.core
   (:gen-class)
-  (:require [clojure.set :refer :all]
+  (:require [challenge.lib :refer :all]
             [clojure.data.json :as json]
             [org.httpkit.server :as server]
             [compojure.core :refer :all]
             [compojure.route :as route]
-            [ring.middleware.defaults :refer :all]))
+            [ring.middleware.defaults :refer :all]
+            [selmer.parser :refer :all]))
 
-; scramble function
-(defn scramble? [str1 str2]
-    (superset? (set str1) (set str2)))
+; Layout
+(set-resource-path! (clojure.java.io/resource "html"))
 
 ; Routes
 (defn get-params [req param]
@@ -18,7 +18,7 @@
 (defn index-page [req]
     {:status 200
      :headers {"Content-Type" "text/html"}
-     :body "Welcome!"})
+     :body (render-file "index.html" {})})
 
 (defn scramble-api [req]
     {:status 200
