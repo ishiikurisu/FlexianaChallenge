@@ -10,7 +10,7 @@
 
 ; Routes
 (defn get-params [req param]
-    (get [:params req] param))
+    (param (:params req)))
 
 (defn index-page [req]
     {:status 200
@@ -20,8 +20,8 @@
 (defn scramble-api [req]
     {:status 200
      :headers {"Content-Type" "text/json"}
-     :body (str (json/write-str (scramble? (get-params req "str1")
-                                           (get-params req "str2"))))})
+     :body (str (json/write-str (scramble? (get-params req :str1)
+                                           (get-params req :str2))))})
 
 (defroutes app-routes
     (GET "/" [] index-page)
