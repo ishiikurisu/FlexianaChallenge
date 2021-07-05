@@ -1,7 +1,6 @@
 (ns challenge.core
-  (:gen-class))
+  (:gen-class)
+  (:require [clojure.set :refer :all]))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defn scramble? [str1 str2]
+    (superset? (set str1) (set str2)))
