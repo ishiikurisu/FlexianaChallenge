@@ -3,6 +3,11 @@
               [goog.events :as events]
               [ajax.core :refer [GET]]))
 
+(defn is-valid [input-fields]
+    (every? true?
+            (map #(= %1 (re-matches #"[a-z]*" %1))
+                 input-fields)))
+
 (defn get-field [field-id]
     (.. (dom/getElement field-id) -value))
 
@@ -19,10 +24,14 @@
     (js/console.log error))
 
 (defn on-click [event]
-    (GET "/api/scramble" {:params {:str1 (get-field "str1")
-                                   :str2 (get-field "str2")}
-                          :handler on-click-handler
-                          :error-handler on-click-error-handler
-                          :response-format :json}))
+    (let [str1 (get-field "str1")
+          str2 (get-field "str2")]
+        (if (is-valid [str1 str2])
+            (GET "/api/scramble" {:params {:str1 str1
+                                           :str2 str2}
+                                  :handler on-click-handler
+                                  :error-handler on-click-error-handler
+                                  :response-format :json})
+            (js/alert "Invalid input"))))
 
 (events/listen (dom/getElement "scramble-button") "click" on-click)
