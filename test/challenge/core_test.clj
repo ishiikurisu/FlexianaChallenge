@@ -2,8 +2,9 @@
   (:require [clojure.test :refer :all]
             [challenge.core :refer :all]))
 
+; unit tests
 (deftest verify-testing-regular-cases
-    (testing "FIXME, I fail."
+    (testing "Regular test cases for scramble function"
         (is (scramble? "rekqodlw" "world"))
         (is (scramble? "cedewaraaossoqqyt" "codewars"))
         (is (not (scramble? "katas" "steak")))))
