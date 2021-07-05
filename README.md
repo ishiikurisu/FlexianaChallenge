@@ -17,7 +17,12 @@ To start the project, run:
 lein run
 ```
 
-It should be available at ???.
+It should be available at http://localhost:3000. This command will do the
+following:
+
+- Install the required dependencies for the project
+- Build the Clojurescript code
+- Start the server
 
 While developing, it's a good idea to keep the unit tests up to date.
 To run them, execute:

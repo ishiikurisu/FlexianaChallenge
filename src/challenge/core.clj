@@ -8,9 +8,6 @@
             [ring.middleware.defaults :refer :all]
             [selmer.parser :refer :all]))
 
-; Layout
-(set-resource-path! (clojure.java.io/resource "html"))
-
 ; Routes
 (defn get-params [req param]
     (get [:params req] param))
@@ -18,7 +15,7 @@
 (defn index-page [req]
     {:status 200
      :headers {"Content-Type" "text/html"}
-     :body (render-file "index.html" {})})
+     :body (render-file "html/index.html" {})})
 
 (defn scramble-api [req]
     {:status 200
