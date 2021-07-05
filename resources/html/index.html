@@ -17,18 +17,18 @@
                 <div class="field">
                     <label class="label">String 1</label>
                     <div class="control">
-                        <input class="input" type="text" name="str1">
+                        <input class="input" type="text" name="str1" id="str1">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">String 2</label>
                     <div class="control">
-                        <input class="input" type="text" name="str2">
+                        <input class="input" type="text" name="str2" id="str2">
                     </div>
                 </div>
                 <div class="field">
                     <div class="control">
-                        <button class="button is-link">Scramble?</button>
+                        <button class="button is-link" id="scramble-button">Scramble?</button>
                     </div>
                 </div>
             </form>
@@ -37,5 +37,7 @@
                 </h1>
             </div>
         </section>
+
+        {% script "js/app.js" %}
     </body>
 </html>
