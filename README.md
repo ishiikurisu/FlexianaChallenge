@@ -1,4 +1,4 @@
-# Flexina Challenge
+# Flexiana Challenge
 
 ## Installation and Usage
 
@@ -7,8 +7,8 @@ Be sure you have [Leiningen](https://leiningen.org/) installed on your machine.
 Clone the repository from Github:
 
 ``` sh
-git clone https://github.com/ishiikurisu/FlexinaChallenge
-cd FlexinaChallenge
+git clone https://github.com/ishiikurisu/FlexianaChallenge
+cd FlexianaChallenge
 ```
 
 To start the project, run:
