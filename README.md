@@ -1,30 +1,57 @@
 # Flexina Challenge
 
-## Installation
+## Installation and Usage
 
-Download from http://example.com/FIXME.
+Be sure you have [Leiningen]() installed on your machine.
 
-## Usage
+Clone the repository from Github:
 
-FIXME: explanation
+``` sh
+git clone https://github.com/ishiikurisu/FlexinaChallenge
+cd FlexinaChallenge
+```
 
-    $ java -jar challenge-0.1.0-standalone.jar [args]
+To start the project, run:
 
-## Options
+``` sh
+lein run
+```
 
-FIXME: listing of options this app accepts.
+It should be available at ???.
 
-## Examples
+While developing, it's a good idea to keep the unit tests up to date.
+To run them, execute:
 
-...
+``` sh
+lein test
+```
 
-### Bugs
+## API Description
 
-...
+### `GET /api/scramble`
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+#### Request
+
+Accepted parameters:
+
+- `str1`: the source string for scrambling
+- `str2`: the target string
+
+Every other parameter is going to be ignored.
+
+Example requests:
+
+```
+http://localhost:3000/api/scramble?str1=joe&str2=eo
+http://localhost:3000/api/scramble?str1=rekqodlw&str2=world
+http://localhost:3000/api/scramble?str1=cedewaraaossoqqyt&str2=codewars
+http://localhost:3000/api/scramble?str1=katas&str2=steak
+```
+
+#### Response
+
+If the request is valid, it should 200 status code and a string representation
+of either `true` or `false`.
 
 ## License
 
