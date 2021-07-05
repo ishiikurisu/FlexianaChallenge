@@ -2,7 +2,7 @@
 
 ## Installation and Usage
 
-Be sure you have [Leiningen]() installed on your machine.
+Be sure you have [Leiningen](https://leiningen.org/) installed on your machine.
 
 Clone the repository from Github:
 
@@ -21,8 +21,16 @@ It should be available at http://localhost:3000. This command will do the
 following:
 
 - Install the required dependencies for the project
-- Build the Clojurescript code
 - Start the server
+
+It may be required to manually build the Clojurescript code. To do so, open
+another terminal window and execute:
+
+``` sh
+lein cljsbuild auto
+```
+
+This will build the Clojurescript code everytime new changes are detected.
 
 While developing, it's a good idea to keep the unit tests up to date.
 To run them, execute:
