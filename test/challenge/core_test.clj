@@ -7,4 +7,8 @@
     (testing "Regular test cases for scramble function"
         (is (scramble? "rekqodlw" "world"))
         (is (scramble? "cedewaraaossoqqyt" "codewars"))
-        (is (not (scramble? "katas" "steak")))))
+        (is (not (scramble? "katas" "steak")))
+        (is (scramble? "asdf" "as"))
+        (is (not (scramble? "qwerty" "as")))
+        (is (scramble? "aaaa" "a"))
+        (is (not (scramble? "a" "aaaa")))))
