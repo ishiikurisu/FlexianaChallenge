@@ -5,10 +5,10 @@
 ; unit tests
 (deftest verify-testing-regular-cases
     (testing "Regular test cases for scramble function"
-        (is (scramble? "rekqodlw" "world"))
-        (is (scramble? "cedewaraaossoqqyt" "codewars"))
-        (is (not (scramble? "katas" "steak")))
-        (is (scramble? "asdf" "as"))
-        (is (not (scramble? "qwerty" "as")))
-        (is (scramble? "aaaa" "a"))
-        (is (not (scramble? "a" "aaaa")))))
+        (is (true? (scramble? "rekqodlw" "world")))
+        (is (true? (scramble? "cedewaraaossoqqyt" "codewars")))
+        (is (false? (scramble? "katas" "steak")))
+        (is (true? (scramble? "asdf" "as")))
+        (is (false? (scramble? "qwerty" "as")))
+        (is (true? (scramble? "aaaa" "a")))
+        (is (false? (scramble? "a" "aaaa")))))
